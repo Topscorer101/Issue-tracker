@@ -1,0 +1,39 @@
+doctype html
+html(lang="en")
+    head
+        title fcc-issue-tracker-issues
+        link(rel="stylesheet", href="/public/issues.css", type="text/css")
+        link(
+            href="https://fonts.googleapis.com/css?family=ZCOOL+QingKe+HuangYou",
+            rel="stylesheet"
+        )
+    body
+        main
+            h1 All Issues for Project: #{project}
+            article#issues
+              if (issues)
+                each issue in issues
+                    if (issue.open == false)
+                        section.issue.closed
+                            small id: #{issue._id}
+                            h2 Issue Title: #{issue.issue_title}
+                            h3 Created By: #{issue.created_by}
+                            p Description: #{issue.issue_text}
+                            p Assigned To: #{issue.assigned_to}
+                            p Status: #{issue.status_text}
+                            p Created On: #{issue.created_on}
+                            p Last Updated: #{issue.updated_on}
+                            p (Closed)
+                    else
+                        section.issue.open
+                            small id: #{issue._id}
+                            h2 Issue Title: #{issue.issue_title}
+                            h3 Created By: #{issue.created_by}
+                            p Description: #{issue.issue_text}
+                            p Assigned To: #{issue.assigned_to}
+                            p Status: #{issue.status_text}
+                            p Created On: #{issue.created_on}
+                            p Last Updated: #{issue.updated_on}
+                            p (Open)
+              else
+                h2 There are no issues right now.
