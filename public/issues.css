@@ -1,0 +1,44 @@
+body {
+    font-family: 'ZCOOL QingKe HuangYou', cursive;
+    background-color: #80bfff;
+}
+
+main {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto 1fr;
+    grid-template-areas:
+        ". heading ."
+        ". issues .";
+}
+
+h1 {
+    grid-area: heading;
+    text-align: center;
+}
+
+#issues {
+    grid-area: issues;
+}
+
+.issue {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    border-style: solid;
+    border-radius: 5px;
+    height: 100%;
+    margin: 5px;
+    padding: 5px;
+}
+
+.open {
+    background-color: green;
+    color: #800080;
+}
+.closed {
+    background-color: red;
+    color: 	#00ffff;
+}
