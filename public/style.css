@@ -1,0 +1,65 @@
+body {
+    font-family: 'ZCOOL QingKe HuangYou', cursive;
+    background-color: #80bfff;
+    color: 	#3333ff;
+}
+main {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(5, auto);
+    grid-template-areas:
+        ". tracker-heading ."
+        ". tracker-subheading ."
+        ". new-issue-fieldset ."
+        ". update-issue-fieldset ."
+        ". delete-issue-fieldset .";
+}
+
+h1 {
+    grid-area: tracker-heading;
+    text-align: center;
+}
+small {
+    grid-area: tracker-subheading;
+    text-align: center;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+legend {
+    text-align: center;
+}
+fieldset {
+    border-width: 7px;
+    border-color: #3498ff;
+}
+
+
+#new-issue-fieldset {
+    grid-area: new-issue-fieldset;
+}
+
+#update-issue-fieldset {
+    grid-area: update-issue-fieldset;
+    }
+
+#delete-issue-fieldset {
+    grid-area: delete-issue-fieldset;
+
+}
+
+
+.button {
+    font-family: 'ZCOOL QingKe HuangYou', cursive;
+    border-radius: 5px;
+    color: #ff9933;
+    background-color: #3399ff;
+}
+
+
+::placeholder {
+    font-family: 'ZCOOL QingKe HuangYou', cursive;
+    font-size: 12pt;
+}
