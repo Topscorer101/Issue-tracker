@@ -1,0 +1,121 @@
+doctype html
+html
+    head
+        title Index page
+        link(href="public/style.css", rel="stylesheet", type="text/css")
+        link(
+            href="https://fonts.googleapis.com/css?family=ZCOOL+QingKe+HuangYou",
+            rel="stylesheet"
+        )
+    body
+        main
+            h1 Issue Tracker
+            |
+            small Add, update, and delete any issues!
+            |
+            fieldset#new-issue-fieldset
+                legend#new-issue-heading
+                    h2 New Issue Form
+                form#new_issue_form(
+                    method="post"
+                )
+                    input#project_name(
+                        type="text", 
+                        name="project_name", 
+                        placeholder="*Project Name", 
+                        required=""
+                    )
+                    input#issue_title(
+                        type="text", 
+                        name="issue_title", 
+                        placeholder="*Title", 
+                        required=""
+                    )
+                    textarea#issue_text(
+                        type="text", 
+                        name="issue_text", 
+                        placeholder="*Text", 
+                        required=""
+                    )
+                    input#created_by(
+                        type="text",
+                        name="created_by",
+                        placeholder="*Created by",
+                        required=""
+                    )
+                    input#assigned_to(
+                        type="text",
+                        name="assigned_to",
+                         placeholder="(opt)Assigned to"
+                    )
+                    input#status_text(
+                        type="text",
+                        name="status_text",
+                        placeholder="(opt)Status text"
+                    )
+                    input.button(
+                        type="submit", 
+                        value="Submit Issue"
+                    )
+            |
+            code#jsonResult
+            |
+            fieldset#update-issue-fieldset
+                legend#update-issue-heading
+                    h2 Update Issue Form
+                form#update_issue_form(
+                    method="post"
+                )
+                    input#update_issue_id(
+                        type="text", 
+                        name="update_issue_id", 
+                        placeholder="*_id", 
+                        required
+                    )
+                    input#update_issue_title(
+                        type="text", 
+                        name="update_issue_title", 
+                        placeholder="(opt)Title", 
+                    )
+                    textarea#update_issue_text(
+                        type="text", 
+                        name="update_issue_text", 
+                        placeholder="(opt)Text", 
+                    )
+                    input#update_assigned_to(
+                        type="text",
+                        name="update_assigned_to",
+                        placeholder="(opt)Assigned to"
+                    )
+                    input#update_status_text(
+                        type="text",
+                        name="update_status_text",
+                        placeholder="(opt)Status text"
+                    )
+                    div#close-checkbox-div
+                        input#close_issue_checkbox(
+                            type="checkbox", 
+                            name="open", 
+                            value="checked"
+                        )
+                        label(for="close_issue_checkbox") Close Issue
+                    input.button(type="submit", value="Update Issue")
+            fieldset#delete-issue-fieldset
+                legend#delete-issue-heading
+                    h2 Delete Issue Form
+                form#delete_issue_form(
+                    method="post"
+                )
+                    input#delete_issue_id(
+                        type="text", 
+                        name="delete_issue_id", 
+                        placeholder="*_id", 
+                        required
+                    )
+                    input.button(type="submit", value="Delete Issue")
+    script(
+        src="https://code.jquery.com/jquery-2.2.1.min.js",
+        integrity="sha256-gvQgAFzTH6trSrAWoH1iPo9Xc96QxSZ3feW6kem+O00=",
+        crossorigin="anonymous"
+    )
+    script(src="public/client.js")
